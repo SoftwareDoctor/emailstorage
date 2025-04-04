@@ -35,3 +35,4 @@ build/
 ### Configuration file ###
 src/main/resources/application.yml
 .env
+docker-compose.yml

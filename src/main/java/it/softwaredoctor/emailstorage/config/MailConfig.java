@@ -29,11 +29,10 @@ public class MailConfig {
         mailSender.setPort(587);
         mailSender.setUsername(username);
         mailSender.setPassword(password);
-
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");  // Abilita STARTTLS
-        props.put("mail.smtp.ssl.enable", "false");     // Disabilita SSL se usi STARTTLS
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smtp.ssl.enable", "false");
         props.put("mail.smtp.debug", "true");
         return mailSender;
     }
@@ -46,9 +45,7 @@ public class MailConfig {
         props.put("mail.imaps.port", "993");
         props.put("mail.imaps.ssl.enable", "false");
         props.put("mail.imaps.starttls.enable", "true");
-
         props.put("mail.imaps.auth", "true");
-
         return Session.getInstance(props);
     }
 
@@ -56,7 +53,7 @@ public class MailConfig {
     public Folder imapFolder() throws MessagingException {
         Store store;
         Folder inbox;
-        Session session = imapSession(); // Ottieni la sessione IMAP dal bean
+        Session session = imapSession();
         store = session.getStore("imaps");
         store.connect("imap.mail.yahoo.com", username, password);
         inbox = store.getFolder("INBOX");
