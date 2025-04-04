@@ -3,14 +3,14 @@ services:
     container_name: emailStorageDB
     image: postgres:latest
     environment:
-      POSTGRES_USER: andrea
-      POSTGRES_PASSWORD: italiano
+      POSTGRES_USER:
+      POSTGRES_PASSWORD:
       PGDATA: /data/emailStorageDB
       POSTGRES_DB: emailStorageDB
     volumes:
       - db:/data/postgres
     ports:
-      - "5447:5432"
+      - "5432:5432"
     restart: unless-stopped
     networks:
       - emailStorage-network
