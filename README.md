@@ -6,6 +6,7 @@ EmailStorage è un'applicazione che automatizza la gestione delle email ricevute
 - Salva i dettagli delle email nel database.
 - Se un'email non ha allegati, il suo stato sarà "letto".
 - Se un'email ha allegati, questi verranno caricati su Amazon S3 e l'email avrà lo stato "elaborato".
+- Invia un report via email con un conteggio del totale email ricevute, il numero totale delle email in stato "LETTA" e il numero totale delle email in stato "ELABORATA" in quel giorno. 
 
 ## Tecnologie Utilizzate
 
