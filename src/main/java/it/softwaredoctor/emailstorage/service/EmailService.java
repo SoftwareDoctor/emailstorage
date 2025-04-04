@@ -52,8 +52,8 @@ public class EmailService {
     @Value("${custom.value}")
     private String customValue;
 
-    @Value("${custom.folder}")
-    private String customFolder;
+//    @Value("${custom.folder}")
+//    private String customFolder;
 
     private final EmailRepository emailRepository;
     private final JavaMailSender javaMailSender;
@@ -255,7 +255,7 @@ public class EmailService {
                     if (safeFileName.length() > 50) {
                         safeFileName = safeFileName.substring(0, 50);
                     }
-                    File tempFile = File.createTempFile("attachment_", "_" + safeFileName, new File(customFolder));
+                    File tempFile = File.createTempFile("attachment_", "_" + safeFileName);
                     try (FileOutputStream fos = new FileOutputStream(tempFile)) {
                         fos.write(attachment.getContent());
                     }
